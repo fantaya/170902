@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function isArray(obj) {
+			  var result = 0;
+			  if(typeof obj === "object") {
+			    result = {}.toString.call(obj).indexOf("Array");
+			    if(result >= 0) {
+			      return true;
+			    }
+			  }
+			  return false;
+			};
+
+			var target = {
+				name : "홍길동",
+				age : 1,
+				gender: "남"
+			};
+			var obj = {
+				name : "아름",
+				age : 2,
+				gender: "중성",
+				hello: "hello123",
+				item: [1, 2, 3],
+				skill: {
+					bet: function(){
+						console.log("가위 바위 보");
+					},
+					laugh: function(){
+						console.log("hahaha");
+					},
+					joke: function(){
+						console.log("hehehehehehehehehehe");
+					}
+				}
+			};
+			var btest = [];
+
+			// console.log(isArray([]) == "Array");
+
+			function mergeObject(targetObj, obj){
+				for (name in obj){
+					if (isArray(targetObj) !== "Array"){
+						// console.log(isArray([]));
+						targetObj[name] = obj[name];
+
+						return console.log(obj);
+					}else{
+						console.log(2);
+					};
+				};
+
+				return console.log(targetObj);
+			};
+
+			// mergeObject(target, obj);
+			var arr1 = [1, 2, 3];
+			mergeObject([], arr1);
+		</script>
+	</body>
+</html>
