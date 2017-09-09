@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = [];
+			var b = {};
+
+			function isArray(obj){
+				// 배열인지 아닌지
+				// console.log(obj.__proto__.constructor.name);
+				// console.log(obj.constructor.name);
+				if (typeof(obj) == "object" && (obj != null || obj!= undefined)){
+					obj.constructor.name == "Array" ? console.log("Array") : console.log("Object");
+				}else{
+					console.log(false);
+
+					return false;
+				};
+			};
+
+			isArray(a);
+			isArray(b);
+			isArray("null");
+			isArray(null);
+			isArray(undefined);
+			isArray();
+
+			function isArray1(obj){
+				console.log(typeof([]));
+				console.log(typeof({}));
+			};
+
+			isArray1();
+
+			function Person(name){
+				this.name = name;
+			};
+			Person.prototype.getName = function(){
+				return console.log(this.name);
+			};
+
+			var p = {name : "hello"};
+
+			(Person.prototype.getName).apply(p);
+		</script>
+	</body>
+</html>
